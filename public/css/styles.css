@@ -7533,6 +7533,9 @@ input[type=checkbox]:not(:disabled) ~ .lever:active:after {
     font-weight: 600;
     font-size: 1.3rem; }
 
+.b-search-results {
+  padding: 0; }
+
 .b-divider {
   text-align: center; }
   .b-divider.m-main-color {
