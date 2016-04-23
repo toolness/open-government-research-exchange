@@ -16,4 +16,12 @@
             pointer-events: none;
         }
     }
+
+    .b-filter[disabled] { 
+        opacity: .3;
+
+        ~ &:before {
+            opacity: .3;
+        }
+    }
 }
