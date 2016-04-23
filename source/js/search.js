@@ -14,7 +14,7 @@ $(function() {
     // returns value of key param from location.search, or false
     var getSearch = function(param) {
         var q = location.search.substr(1),
-        result = false;
+        result = '';
 
         q.split('&').forEach(function(part) {
             var item = part.split('=');
