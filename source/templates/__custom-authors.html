@@ -13,7 +13,7 @@
         <div class="large-6 column">
           <h1 class="e-name">{{ title }}</h1>
           <h2 class="e-job">{{ job }}</h2>
-          <p class="e-description">{{ short_description | safe }}</p>
+          <p class="e-description">{{ short_description }}</p>
           <div class="e-extras">
             {% if social_media.twitter %}
               <a href="{{ social_media.twitter }}" class="b-social-media-icon m-twitter" target="_blank"><img src="./img/twitter-logo.png" alt=""></a>
