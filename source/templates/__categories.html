@@ -23,9 +23,11 @@
       </div>
       <div class="row">
         <div class="column large-8 large-offset-2">
-          <form action="" class="b-form m-negative">
-            <input id="lunr-filter" type="text" placeholder="Search" data-category="{{custom_filter | slug }}" />
+          <form action="" class="b-search m-main-search m-negative">
+            <input id="lunr-filter" type="text" placeholder="Search" data-category="{{custom_filter | slug }}" /><!--
+           --><input class="e-search-trigger material-icons" type="submit" value="search">
           </form>
+          
         </div>
       </div>
     </div>
