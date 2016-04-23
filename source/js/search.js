@@ -14,7 +14,7 @@ $(function() {
     // returns value of key param from location.search, or false
     var getSearch = function(param) {
         var q = location.search.substr(1),
-        result = false;
+        result = '';
 
         q.split('&').forEach(function(part) {
             var item = part.split('=');
@@ -52,7 +52,7 @@ $(function() {
         index = lunr.Index.load(d.index);
         papers = d.papers;
 
-        $.get( '_rendered_result_item.html', function( d ) {
+        $.get( 'rendered_result_item.html', function( d ) {
             resultSnippet = d;
 
             // after loading the index, grab the search string, if present

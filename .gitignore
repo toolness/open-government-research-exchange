@@ -3,4 +3,8 @@ node_modules/
 source/templates/categories/
 source/templates/organizations/
 source/templates/papers/
+<<<<<<< HEAD
 source/templates/custom-authors/
+=======
+source/templates/custom-authors/
+>>>>>>> 664e055b469d2f4edac048216688c97620dc8307
