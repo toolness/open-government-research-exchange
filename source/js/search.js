@@ -52,7 +52,7 @@ $(function() {
         index = lunr.Index.load(d.index);
         papers = d.papers;
 
-        $.get( '_rendered_result_item.html', function( d ) {
+        $.get( 'rendered_result_item.html', function( d ) {
             resultSnippet = d;
 
             // after loading the index, grab the search string, if present
