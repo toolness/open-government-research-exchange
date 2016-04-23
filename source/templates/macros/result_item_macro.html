@@ -1,48 +1,104 @@
-{% macro createResult(paper) %}
+{% macro createResult(paper,authors,taxonomy_category,taxonomy_methodology, taxonomy_objective, type, region, sector,tools) %}
 
 
 <div class="b-result-item m-access-{{paper.access | slug}} f-{{paper.organization | slug}} {% for obj in paper.taxonomy.objective %} {%if obj%} f-{{obj | slug}} {% endif %} {% endfor %}f-{{paper.access | slug}}  {% for methodology in paper.taxonomy.methodology %} {% if methodology %} f-{{methodology | slug}} {% endif %} {% endfor %} {% for s in paper.sector %} {% if s %} f-{{ s | slug}} {% endif %} {% endfor %} {% for r in paper.region %} {% if r %} f-{{ r | slug}} {% endif %} {% endfor %} f-{{paper.type | slug}} f-search-{{paper.id}}{% for c in paper.taxonomy.category %} m-{{ c | slug}}{% endfor %} ">
 
 
-      <a href="{{paper.id}}-{{paper.title | slug}}.html" title="{{paper.title}}">
-        {# {% if paper.cover_image %}
-        <div class="e-result-image" style="background-image: url('{{paper.cover_image}}')"></div>
-        {% endif %} #}
+    <a href="{{paper.id}}-{{paper.title | slug}}.html" title="{{paper.title}}">
+      {# {% if paper.cover_image %}
+      <div class="e-result-image" style="background-image: url('{{paper.cover_image}}')"></div>
+      {% endif %} #}
+
+      <h3 class="e-result-name">{{paper.title}}</h3>
+      </a>
+
+      {% if paper.authors %}
+      <p class="e-result-authors">
+        {% for author in paper.authors %}
+          <span><a class="e-author-link" href="{{ author | returnID(authors) }}-{{ author | slug }}.html">{{author}}{% if not loop.last %},{% endif %}</a>
+        {% endfor %}</span>
+      </p>
+      {% endif %}
 
 
+      <!-- These IF statements are not really working.  -->
 
-        <h3 class="e-result-name">{{paper.title}}</h3>
+      {% if paper.taxonomy.category %}
+      <div class="e-result-taxonomy m-category">
+        <p>Category</p>
+        {% for cat in paper.taxonomy.category %} 
+          <a href="{{ cat | returnID(taxonomy_category) }}-{{ cat | slug }}.html">
+          <span class="m-{{cat}}">{{cat}}</span> 
+          </a>
+        {% endfor %}
+      </div>
+      {% endif %}
 
-        {% if paper.authors %}
-        <p class="e-result-authors">
-          {% for author in paper.authors %}
-            {{ author }}{% if not loop.last %},{% endif %}
+      {% if paper.taxonomy.methodology %}
+      <div class="e-result-taxonomy m-methodology">
+        <p>Methodology</p>
+        {% for m in paper.taxonomy.methodology %} 
+          <a href="{{ m | returnID(taxonomy_methodology) }}-{{ m | slug }}.html">
+          <span>{{m}}</span> 
+          </a>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% if paper.taxonomy.objective %}
+      <div class="e-result-taxonomy m-objective">
+        <p>Objective</p>
+        {% for obj in paper.taxonomy.objective %} 
+          <a href="{{ obj | returnID(taxonomy_objective) }}-{{ obj | slug }}.html">
+            <span>{{obj}}</span> 
+          </a>
           {% endfor %}
-        </p>
-        {% endif %}
-
-
-        <!-- These IF statements are not really working.  -->
-
-        {% if paper.taxonomy.category %}
-        <div class="e-result-taxonomy m-category">
-          <p>Category</p>
-          {% for cat in paper.taxonomy.category %} <span class="m-{{cat}}">{{cat}}</span> {% endfor %}
         </div>
-        {% endif %}
+      {% endif %}
 
-        {% if paper.taxonomy.methodology %}
-        <div class="e-result-taxonomy m-methodology">
-          <p>Methodology</p>
-          {% for met in paper.taxonomy.methodology %} <span>{{met}}</span> {% endfor %}
+
+      {% if paper.type%}
+      <div class="e-result-taxonomy m-objective">
+        <p>Type</p>
+        <a href="{{ paper.type | returnID(type) }}-{{ paper.type }}.html">
+          <span>{{paper.type}}</span>
+          </a>
+          </a>
         </div>
-        {% endif %}
+      {% endif %}
 
-        {% if paper.taxonomy.objective %}
-        <div class="e-result-taxonomy m-objective">
-          <p>Objective</p>
-          {% for obj in paper.taxonomy.objective %} <span>{{obj}}</span> {% endfor %}</div>
-        {% endif %}
+      {% if paper.region %}
+      <div class="e-result-taxonomy m-objective">
+        <p>Region</p>
+        {% for r in paper.region %} 
+          <a href="{{ r | returnID(region) }}-{{ r | slug }}.html">
+            <span>{{r}}</span> 
+          </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if paper.sector %}
+      <div class="e-result-taxonomy m-objective">
+        <p>Sector</p>
+        {% for s in paper.sector %} 
+          <a href="{{ s | returnID(sector) }}-{{ s | slug }}.html">
+            <span>{{s}}</span> 
+          </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if paper.tools %}
+      <div class="e-result-taxonomy m-objective">
+        <p>Tools</p>
+        {% for t in paper.tools%} 
+          <a href="{{ t | returnID(tools) }}-{{ t | slug }}.html">
+            <span>{{t}}</span> 
+          </a>
+          {% endfor %}
+        </div>
+      {% endif %}
 
           <div class="e-result-extras m-{{paper.organization | slug }}">
             {% if paper.organization == "the-govlab" %}
