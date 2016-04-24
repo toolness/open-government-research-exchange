@@ -16,7 +16,7 @@
         <h1 class="e-paper-title">{{ title }}</h1>
         <h3 class="e-paper-authors">
           {% for author in authors %}
-            {{ author }}{% if not loop.last %},{% endif %}
+          <a class="e-author-link" href="{{ author | returnID(authors) }}-{{ author | slug }}.html">{{author}}{% if not loop.last %},{% endif %}</a>
           {% endfor %}
         </h3>
         <h4 class="e-paper-date">{{ paper_date }}</h4>
