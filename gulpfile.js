@@ -152,11 +152,14 @@ function containsAny(arr1, arr2) {
 // Find an ID given a value and a source
 
 function returnID(value,source) {
+
   var result;
-  for (var i = 0; i < source.length; i++) {
-    if (value === source[i].value) {
-      result = source[i].id;
-    } 
+  if (source) {
+    for (var i = 0; i < source.length; i++) {
+      if (value === source[i].value) {
+        result = source[i].id;
+      } 
+    }
   }
   return result;
 }
