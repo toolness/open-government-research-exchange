@@ -148,6 +148,24 @@ function containsAny(arr1, arr2) {
   });
 }
 
+
+// Find an ID given a value and a source
+
+function returnID(value,source) {
+
+  var result;
+  if (source) {
+    for (var i = 0; i < source.length; i++) {
+      if (value === source[i].value) {
+        result = source[i].id;
+      } 
+    }
+  }
+  return result;
+}
+
+
+
 // return a matched set of objects containing property (prop) with value (value)
 // if prop is an array, treat it as dot syntax
 function matchObjects(arr, prop, value) {
@@ -256,6 +274,7 @@ function nunjucksEnv(env) {
   env.addFilter('containsAny', containsAny);
   env.addFilter('pushnew', pushIfNew);
   env.addFilter('pushallnew', pushAllValuesInCategory);
+  env.addFilter('returnID', returnID);
 }
 
 // a subroutine to simplify processJson

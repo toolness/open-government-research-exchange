@@ -18,7 +18,7 @@
         {% for paper in $global.papers %}
           {% if paper[propertyName] and paper[propertyName] | contains(value) %}
 
-          {{resultItem.createResult(paper)}}
+          {{resultItem.createResult(paper,$global.authors,$global.taxonomy_category, $global.taxonomy_methodology,$global.taxonomy_objective, $global.type,$global.region, $global.sector,$global.tools)}}
 
 
         {% endif %}
