@@ -63,7 +63,7 @@ body {
   }
 }
 
-.b-main-search-section{
+.b-main-search-section {
   background-color: darken($main-color, 4);
 }
 
@@ -77,6 +77,9 @@ body {
   }
 }
 
+.b-categories-page {
+  .switch { text-indent: 90px; }
+}
 
 .ogr-paragraph:hover{
   color: $green;
