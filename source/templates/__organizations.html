@@ -47,11 +47,11 @@
 
     {# List of Articles #}
     <div class="b-page-section b-results-section b-isotope">
-      {% for paper in $global.papers %}
-        {% if paper.organization == title|slug %}
-            {{resultItem.createResult(d,$global.authors,$global.taxonomy_category, $global.taxonomy_methodology,$global.taxonomy_objective, $global.type,$global.region, $global.sector,$global.tools))}}
+      {% for d in $global.papers %}
+        {% if d.organization == title|slug %}
+          {{resultItem.createResult(d,$global.authors,$global.taxonomy_category, $global.taxonomy_methodology,$global.taxonomy_objective, $global.type,$global.region, $global.sector,$global.tools)}}
         {% elif custom_filter and paper.organization == custom_filter %}
-            {{resultItem.createResult(d,$global.authors,$global.taxonomy_category, $global.taxonomy_methodology,$global.taxonomy_objective, $global.type,$global.region, $global.sector,$global.tools))}}
+          {{resultItem.createResult(d,$global.authors,$global.taxonomy_category, $global.taxonomy_methodology,$global.taxonomy_objective, $global.type,$global.region, $global.sector,$global.tools)}}
         {% endif %}
 {#         {% endif %} #}
       {% endfor %}
