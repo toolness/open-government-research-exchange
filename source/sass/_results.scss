@@ -10,20 +10,8 @@
   background-color: $white;
   padding: 30px 30px 90px; 
   width: 100%;
-<<<<<<< HEAD
-  
-  // a { 
-    padding: 30px; 
-    width: 100%;
-    display: block;
-    text-decoration: none;
-  // }
-
-  // &:nth-of-type(2n) a { background-color: rgba($black, .1); }
-=======
   display: block;
   text-decoration: none;
->>>>>>> 5ba8ab5f43bec7f175a312fc46bf4efc5ff9fdf7
 
   @include breakpoint($medium) {
     width: 50%;    
