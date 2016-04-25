@@ -215,6 +215,14 @@ function pushIfNew(arr, v) {
   return arr;
 }
 
+// push v to array arr if it is not already present, truthy, and not blank
+function pushIfNewTruthy(arr, v) {
+  if (v && v !== '' && arr.indexOf(v) === -1) {
+    arr.push(v);
+  }
+  return arr;
+}
+
 // push all unique values of a certain property (prop) to an array and return that array
 // in a particular category
 function pushAllValuesInCategory(arr, obj, prop, category, prefix) {
@@ -226,10 +234,10 @@ function pushAllValuesInCategory(arr, obj, prop, category, prefix) {
     if (v) {
       if (Array.isArray(v)) {
         for (i in v) {
-          pushIfNew(arr, v[i]);
+          pushIfNewTruthy(arr, v[i]);
         }
       } else {
-        pushIfNew(arr, v);
+        pushIfNewTruthy(arr, v);
       }
     }
   }
