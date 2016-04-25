@@ -49,14 +49,14 @@
 
       
       {% if paper.type %}
-      <div class="e-result-taxonomy m-objective">
+      <div class="e-result-taxonomy m-type">
         <p>Type</p>
         <a class="e-tag" href="{{ paper.type | returnID(type) }}-{{ paper.type }}.html">{{paper.type}}</a>
       </div>
       {% endif %}
 
       {% if paper.region %}
-      <div class="e-result-taxonomy m-objective">
+      <div class="e-result-taxonomy m-region">
         <p>Region</p>
         {% for r in paper.region %} 
           <a class="e-tag" href="{{ r | returnID(region) }}-{{ r | slug }}.html">{{r}}</a>
@@ -65,7 +65,7 @@
       {% endif %}
 
       {% if paper.sector %}
-      <div class="e-result-taxonomy m-objective">
+      <div class="e-result-taxonomy m-sector">
         <p>Sector</p>
         {% for s in paper.sector %} 
           <a class="e-tag" href="{{ s | returnID(sector) }}-{{ s | slug }}.html">{{s}}</a>
@@ -74,7 +74,7 @@
       {% endif %}
 
       {% if paper.tools %}
-      <div class="e-result-taxonomy m-objective">
+      <div class="e-result-taxonomy m-tools">
         <p>Tools</p>
         {% for t in paper.tools %} 
           <a class="e-tag" href="{{ t | returnID(tools) }}-{{ t | slug }}.html">{{t}}</a>
