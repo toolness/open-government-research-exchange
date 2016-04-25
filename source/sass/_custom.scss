@@ -74,7 +74,10 @@ body {
     padding: 40px 0;
     text-align: center;
     &:nth-child(even) { background-color: rgba($black, .03); }
+
   }
+
+
 }
 
 .b-categories-page {
@@ -84,4 +87,18 @@ body {
 .ogr-paragraph:hover{
   color: $green;
 }
+
+// PLACEHOLDER COLOR CODES FOR LIST ITEM
+.e-list-item {
+  &.m-all {background-color: $all;} 
+  &.m-behavioral-research {background-color: $behavioral-research !important;}
+  &.m-citizen-engagement {background-color: $citizen-engagement;}
+  &.m-civic-technology {background-color: $civic-technology !important;}
+  &.m-data-analysis {background-color: $data-analysis;}
+  &.m-expert-networking {background-color: $expert-networking !important; }
+  &.m-open-data {background-color: $open-data;}
+  &.m-labs-and-experimentation {background-color: $labs-and-experimentation !important;}
+}
+
+
 

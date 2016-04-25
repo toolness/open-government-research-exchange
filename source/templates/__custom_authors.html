@@ -51,7 +51,7 @@
     <div class="b-page-section b-results-section b-isotope">
       {% for paper in $global.papers %}
         {% if title in paper.authors or paper.authors | containsAny(custom_filter) %}
-           {{resultItem.createResult(d,$global.authors,$global.taxonomy_category, $global.taxonomy_methodology,$global.taxonomy_objective, $global.type,$global.region, $global.sector,$global.tools)}}
+           {{resultItem.createResult(paper,$global.authors,$global.taxonomy_category, $global.taxonomy_methodology,$global.taxonomy_objective, $global.type,$global.region, $global.sector,$global.tools)}}
         {% endif %}
       {% endfor %}
     </div>

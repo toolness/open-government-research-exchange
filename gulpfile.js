@@ -148,6 +148,13 @@ function containsAny(arr1, arr2) {
   });
 }
 
+function titleExists(title,source) {
+  var titles = [];
+  source.forEach(function(val) {
+    titles.push(val.title);
+  })
+  return titles.indexOf(title) > -1;
+}
 
 // Find an ID given a value and a source
 
@@ -275,6 +282,7 @@ function nunjucksEnv(env) {
   env.addFilter('pushnew', pushIfNew);
   env.addFilter('pushallnew', pushAllValuesInCategory);
   env.addFilter('returnID', returnID);
+  env.addFilter('titleExists', titleExists);
 }
 
 // a subroutine to simplify processJson
