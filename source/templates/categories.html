@@ -12,17 +12,15 @@
     <h1>Main Categories</h1>
   </div>
 
-  <div class="b-page-section b-all-categories-list">
+  <div class="b-page-section b-main-categories">
     <div class="row expanded">
       {% for cat in categories %}
-        <div class="column large-4 e-list-item m-{{cat.title | slug}}">
-          <h3><a href="{{cat.id }}-{{cat.title | slug }}.html">{{cat.title}}</a></h3>
+        <div class="medium-3 show-for-medium column e-list-item m-{{cat.title | slug}}">
+          <a class="e-category-item" href="{{cat.id }}-{{cat.title | slug }}.html">{{cat.title}}</a>
         </div>
       {% endfor %}
     </div>
   </div>
-
-
 
 {# List of Categories - All Categories #}
   <div class="b-divider">
