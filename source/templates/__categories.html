@@ -58,21 +58,21 @@
     <div class="b-page-section b-results-section b-isotope">
     {% for d in $global.papers %}
 
-    {%- set _match = false -%}
-    {%- for i in d.taxonomy.category -%}
-      {%- if i == custom_filter -%}
-        {%- set _match = true -%}
+      {%- set _match = false -%}
+      {%- for i in d.taxonomy.category -%}
+        {%- if i == custom_filter -%}
+          {%- set _match = true -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- if custom_filter == false -%}
+         {%- set _match = true -%}
       {%- endif -%}
-    {%- endfor -%}
-    {%- if custom_filter == false -%}
-       {%- set _match = true -%}
-    {%- endif -%}
 
-    {% if _match %}
-            {{resultItem.createResult(d,$global.authors,$global.taxonomy_category, $global.taxonomy_methodology,$global.taxonomy_objective, $global.type,$global.region, $global.sector,$global.tools)}}
-      {% endif %}
-    {%endif%}
-      {% endfor %}
+      {% if _match %}
+              {{resultItem.createResult(d,$global.authors,$global.taxonomy_category, $global.taxonomy_methodology,$global.taxonomy_objective, $global.type,$global.region, $global.sector,$global.tools)}}
+      {%endif%}
+
+    {% endfor %}
     </div>
   </div>
   {% endblock %}
