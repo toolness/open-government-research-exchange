@@ -11,7 +11,7 @@
           <span class="b-button" onclick="$('.b-extra-info-panel').toggleClass('visible');">More Information</span>
         </div>
         <div class="large-6 column">
-          <p class="e-description">{{ short_description }}</p>
+          <p class="e-description">{{ short_description | safe }}</p>
           <div class="e-extras">
             {% if social_media.twitter %}
               <a href="{{ social_media.twitter }}" class="b-social-media-icon m-twitter" target="_blank"><img src="./img/twitter-logo.png" alt="{{title}} Twitter" title="{{title}} Twitter"></a>
