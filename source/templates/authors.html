@@ -12,13 +12,13 @@
     <h1>Featured Authors</h1>
   </div>
 
-  <div class="b-page-section b-all-categories-list">
+  <div class="b-page-section b-featured-authors">
     <div class="row expanded">
       {% for a in  custom_authors %}
         <div class="column large-4 e-list-item">
-          <img src="./img/authors/{{ a.image }}" style="height:150px"/>
-          <h3><a href="{{a.id }}-{{a.title | slug }}.html">{{a.title}}</a></h3>
-          <p>{{a.job}}</p>
+          <div class="e-picture" style="background-image: url('./img/authors/{{ a.image }}');"></div>
+          <p class="e-name" href="{{a.id }}-{{a.title | slug }}.html">{{a.title}}</p>
+          <p class="e-job">{{a.job}}</p>
         </div>
       {% endfor %}
     </div>

@@ -87,6 +87,36 @@ body {
   color: $green;
 }
 
+
+.b-featured-authors {
+  .e-list-item {
+    text-align: center;
+    height: 380px;
+
+    .e-picture {
+      height: 250px;
+      width: 250px;
+      margin: 0 auto 30px;
+      background-position: center;
+      background-size: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba($black, .1);
+    }
+
+    .e-name {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .e-job {
+      font-size: 1rem;
+      color: rgba($black, .6);
+    }
+  }
+}
+
+
 // PLACEHOLDER COLOR CODES FOR LIST ITEM
 .e-list-item {
   &.m-all {background-color: $all;} 
