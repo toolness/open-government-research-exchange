@@ -4581,7 +4581,6 @@ Styleguide 1.2
   right: 0;
   z-index: 10;
   display: none;
-  background-color: red;
   opacity: .1; }
   #overlay.m-active {
     display: block; }
@@ -7651,3 +7650,6 @@ input[type=checkbox]:not(:disabled) ~ .lever:active:after {
 
 .e-list-item.m-labs-and-experimentation {
   background-color: #dbc048 !important; }
+
+.e-partner-logo {
+  width: 120px; }

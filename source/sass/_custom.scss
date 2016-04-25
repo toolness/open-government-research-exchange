@@ -90,7 +90,7 @@ body {
 
 // PLACEHOLDER COLOR CODES FOR LIST ITEM
 .e-list-item {
-  &.m-all {background-color: $all;} 
+  &.m-all {background-color: $all;}
   &.m-behavioral-research {background-color: $behavioral-research !important;}
   &.m-citizen-engagement {background-color: $citizen-engagement;}
   &.m-civic-technology {background-color: $civic-technology !important;}
@@ -100,5 +100,6 @@ body {
   &.m-labs-and-experimentation {background-color: $labs-and-experimentation !important;}
 }
 
-
-
+.e-partner-logo{
+  width: 120px;
+}
