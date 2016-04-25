@@ -100,6 +100,11 @@ body {
   &.m-labs-and-experimentation {background-color: $labs-and-experimentation !important;}
 }
 
+//// footer
 .e-partner-logo{
-  width: 120px;
+  width: 31%;
+  padding: 0 2%
+}
+.footer-text:hover{
+  color: $yellow;
 }
