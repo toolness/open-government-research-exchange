@@ -34,9 +34,11 @@
   <div class="b-page-section b-all-categories-list">
     <div class="row expanded">
       {% for a in  authors %}
+        {% if not a.value | titleExists(custom_authors) %}
         <div class="column large-4 e-list-item">
           <h3><a href="{{a.id }}-{{a.title | slug }}.html">{{a.title}}</a></h3>
         </div>
+        {% endif %}
       {% endfor %}
     </div>
   </div>
