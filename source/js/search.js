@@ -103,40 +103,126 @@ $(function() {
         for (var m in mapping) {
             // inject the result snippet with the mapped data
             var $snippet = $(resultSnippet);
-            $snippet.find('.e-result-name').text(mapping[m].title);
-            $snippet.find('.e-result-authors').text(mapping[m].authors);
+            var _html;
 
-            $snippet.find('.e-result-taxonomy.m-category').html(
-                '<span>' +
-                mapping[m].taxonomy.category.join('</span> <span>')
-                + '</span>'
+            $snippet.find('.e-result-name').html(
+                '<a href="' +
+                mapping[m].id + '-' + slug(mapping[m].title)
+                + '.html" title="' +
+                mapping[m].title
+                + '">' + mapping[m].title
+                + '</a>'
                 );
 
-            $snippet.find('.e-result-taxonomy.m-methodology').html(
-                '<span>' +
-                mapping[m].taxonomy.methodology.join('</span> <span>')
-                + '</span>'
+            _html = '';
+            for (var i in mapping[m].authors) {
+                _html +=
+                '<a class="e-author-link" href="#">' +
+                mapping[m].authors[i]
+                + '</a>' +
+                (i < mapping[m].authors.length-1 ? ', ' : '')
+                ;
+            }
+
+            $snippet.find('.e-result-authors').html(_html);
+
+            _html = '<p>Category</p>';
+            for (var i in mapping[m].taxonomy.category) {
+                _html +=
+                '<a class="e-tag m-' +
+                slug(mapping[m].taxonomy.category[i])
+                + '" href="#">' +
+                mapping[m].taxonomy.category[i]
+                + '</a> '
+                ;
+            }
+
+            $snippet.find('.e-result-taxonomy.m-category').html(_html);
+
+            _html = '<p>Methodology</p>';
+            for (var i in mapping[m].taxonomy.methodology) {
+                _html +=
+                '<a class="e-tag m-' +
+                slug(mapping[m].taxonomy.methodology[i])
+                + '" href="#">' +
+                mapping[m].taxonomy.methodology[i]
+                + '</a> '
+                ;
+            }
+
+            $snippet.find('.e-result-taxonomy.m-methodology').html(_html);
+
+            _html = '<p>Objective</p>';
+            for (var i in mapping[m].taxonomy.objective) {
+                _html +=
+                '<a class="e-tag m-' +
+                slug(mapping[m].taxonomy.objective[i])
+                + '" href="#">' +
+                mapping[m].taxonomy.objective[i]
+                + '</a> '
+                ;
+            }
+
+            $snippet.find('.e-result-taxonomy.m-objective').html(_html);
+
+            $snippet.find('.m-type').html(
+                '<p>Type</p><a class="e-tag" href="#">' +
+                mapping[m].type
+                + '</a>'
                 );
 
-            $snippet.find('.e-result-taxonomy.m-objective').html(
-                '<span>' +
-                mapping[m].taxonomy.objective.join('</span> <span>')
-                + '</span>'
-                );
+            _html = '<p>Region</p>';
+            for (var i in mapping[m].region) {
+                _html +=
+                '<a class="e-tag m-' +
+                slug(mapping[m].region[i])
+                + '" href="#">' +
+                mapping[m].region[i]
+                + '</a> '
+                ;
+            }
+
+            $snippet.find('.m-region').html(_html);
+
+            _html = '<p>Sector</p>';
+            for (var i in mapping[m].sector) {
+                _html +=
+                '<a class="e-tag m-' +
+                slug(mapping[m].sector[i])
+                + '" href="#">' +
+                mapping[m].sector[i]
+                + '</a> '
+                ;
+            }
+
+            $snippet.find('.m-sector').html(_html);
+
+            _html = '<p>Tools</p>';
+            for (var i in mapping[m].tools) {
+                _html +=
+                '<a class="e-tag m-' +
+                slug(mapping[m].tools[i])
+                + '" href="#">' +
+                mapping[m].tools[i]
+                + '</a> '
+                ;
+            }
+
+            $snippet.find('.m-tools').html(_html);
 
             $snippet.find('.m-closed-access').remove();
 
             if (mapping[m].access.toLowerCase() === 'closed') {
                $snippet.find('.e-result-extras').append('<i class="material-icons m-closed-access" title="Closed Access">lock_outline</i>')
-            }
+           }
 
-            resultsHTML += $snippet.prop('outerHTML');
-        }
+           resultsHTML += $snippet.prop('outerHTML');
+       }
 
-        $( '.b-lunr-results' ).html(resultsHTML);
-    };
+       $( '.b-lunr-results' ).html(resultsHTML);
+   };
 
-    var filter = function (e) {
+   var filter = function (e) {
         // $( '.b-lunr-results' ).text( JSON.stringify(index.search($('#lunr-search').val())) );
 
         var results,
@@ -168,8 +254,8 @@ $(function() {
 
     }
 
-    var debouncedSearch = _.debounce(search, 100, false);
-    var debouncedFilter = _.debounce(filter, 1000, false);
+    var debouncedSearch = _.debounce(search, 300, false);
+    var debouncedFilter = _.debounce(filter, 500, false);
 
     $('#lunr-search').keyup(debouncedSearch);
     $('#lunr-search').on('search:execute', debouncedSearch);
