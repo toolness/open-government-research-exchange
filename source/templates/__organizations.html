@@ -8,7 +8,9 @@
       <div class="row">
         <div class="large-6 column e-image-column">
           <img class="e-org-logo" src="img/organizations/{{ image_white }}" alt="{{title}}" title="{{title}}">
+          {% if long_description %}
           <span class="b-button" onclick="$('.b-extra-info-panel').toggleClass('visible');">More Information</span>
+          {% endif %}
         </div>
         <div class="large-6 column">
           <p class="e-description">{{ short_description | safe }}</p>
@@ -22,7 +24,7 @@
           </div>
         </div>
       </div>
-
+    {% if long_description %}
       {# Extra Info Panel #}
       <div class="b-extra-info-panel">
         <div class="row">
@@ -36,6 +38,7 @@
           </div>
         </div>
       </div>
+    {% endif %}
     </div>
 
     {# Article Section #}
