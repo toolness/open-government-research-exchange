@@ -1,0 +1,48 @@
+{% extends '_base.html' %}
+
+{% block main %}
+<div class-"b-all-categories-page">
+
+  <div class="b-top-section">
+    <h1>Authors</h1>
+  </div>
+
+{# List of Authors - Features Authors #}
+  <div class="b-divider">
+    <h1>Featured Authors</h1>
+  </div>
+
+  <div class="b-page-section b-all-categories-list">
+    <div class="row expanded">
+      {% for a in  custom_authors %}
+        <div class="column large-4 e-list-item">
+          <img src="./img/authors/{{ a.image }}" style="height:150px"/>
+          <h3><a href="{{a.id }}-{{a.title | slug }}.html">{{a.title}}</a></h3>
+          <p>{{a.job}}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+
+
+{# List of Authors - All Authors #}
+  <div class="b-divider">
+    <h1>AllAuthors</h1>
+  </div>
+
+  <div class="b-page-section b-all-categories-list">
+    <div class="row expanded">
+      {% for a in  authors %}
+        <div class="column large-4 e-list-item">
+          <h3><a href="{{a.id }}-{{a.title | slug }}.html">{{a.title}}</a></h3>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+
+</div>
+
+
+{% endblock %}
