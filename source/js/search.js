@@ -139,9 +139,14 @@ $(function() {
     var filter = function (e) {
         // $( '.b-lunr-results' ).text( JSON.stringify(index.search($('#lunr-search').val())) );
 
-
-        var results = scopedIndices[$(this).attr('data-category')].search($(this).val()),
+        var results,
         limit = 50;
+
+        if ($(this).attr('data-category') && $(this).attr('data-category') !== 'false') {
+            results = scopedIndices[$(this).attr('data-category')].search($(this).val());
+        } else {
+            results = index.search($(this).val());
+        }
 
         // console.log ($(this).attr('data-category'), $(this).val(), results, scopedIndices[$(this).attr('data-category')]);
 
