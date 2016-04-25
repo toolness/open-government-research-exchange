@@ -33,7 +33,7 @@
 
         {% if not cat.value | titleExists(categories) and cat.title %}
         <div class="column large-4 e-list-item">
-          <h3><a href="{{cat.id }}-{{cat.title | slug }}.html">{{cat.value}}</a></h3>
+          <a href="{{cat.id }}-{{cat.title | slug }}.html">{{cat.value}}</a>
         </div>
         {% endif %}
       {% endfor %}

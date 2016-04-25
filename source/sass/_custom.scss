@@ -73,11 +73,10 @@ body {
   .e-list-item {
     padding: 40px 0;
     text-align: center;
+    font-size: 1.1rem;
     &:nth-child(even) { background-color: rgba($black, .03); }
 
   }
-
-
 }
 
 .b-categories-page {
