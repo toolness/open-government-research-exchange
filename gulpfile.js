@@ -228,7 +228,7 @@ function pushIfNewTruthy(arr, v) {
 function pushAllValuesInCategory(arr, obj, prop, category, prefix) {
   prefix = prefix === undefined ? false : prefix;
 
-  if (obj.taxonomy.category && obj.taxonomy.category.indexOf(category) > -1) {
+  if (!category || category && obj.taxonomy.category && obj.taxonomy.category.indexOf(category) > -1) {
     var v = prefix ? obj[prefix][slugify(prop)] : obj[slugify(prop)] ;
 
     if (v) {
