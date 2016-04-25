@@ -4581,6 +4581,7 @@ Styleguide 1.2
   right: 0;
   z-index: 10;
   display: none;
+  background-color: red;
   opacity: .1; }
   #overlay.m-active {
     display: block; }
@@ -7617,7 +7618,8 @@ input[type=checkbox]:not(:disabled) ~ .lever:active:after {
   padding: 0; }
   .b-all-categories-list .e-list-item {
     padding: 40px 0;
-    text-align: center; }
+    text-align: center;
+    font-size: 1.1rem; }
     .b-all-categories-list .e-list-item:nth-child(even) {
       background-color: rgba(51, 51, 51, 0.03); }
 
@@ -7626,6 +7628,25 @@ input[type=checkbox]:not(:disabled) ~ .lever:active:after {
 
 .ogr-paragraph:hover {
   color: #197d32; }
+
+.b-featured-authors .e-list-item {
+  text-align: center;
+  height: 380px; }
+  .b-featured-authors .e-list-item .e-picture {
+    height: 250px;
+    width: 250px;
+    margin: 0 auto 30px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(51, 51, 51, 0.1); }
+  .b-featured-authors .e-list-item .e-name {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin: 0; }
+  .b-featured-authors .e-list-item .e-job {
+    font-size: 1rem;
+    color: rgba(51, 51, 51, 0.6); }
 
 .e-list-item.m-all {
   background-color: #3b4f65; }
