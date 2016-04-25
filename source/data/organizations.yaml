@@ -1,8 +1,8 @@
 - title: Digital Engagement Evaluation Team # Organization
   image: deet-logo.png # Logo image
   image_white: deet-logo-white.png # Logo image (white version)
-  short_description: All Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque non dolor sapiente suscipit. Magni excepturi iusto, ducimus facere, iure ex quaerat id est corporis incidunt, doloribus odio voluptate totam pariatur.
-  long_description: All Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque non dolor sapiente suscipit. Magni excepturi iusto, ducimus facere, iure ex quaerat id est corporis incidunt, doloribus odio voluptate totam pariatur.
+  short_description: The World Bank is a vital source of financial and technical assistance to developing countries around the world. The Bank’s Digital Engagement Evaluation Team (DEET) works with governments to leverage technology-enabled solutions for better public policies and services. DEET undertakes a number of evaluation and research activities that apply cutting-edge methodologies to examine the effects of technology on participation, transparency, accountability and government responsiveness.
+  long_description: false
   custom_filter: world-bank-digital-engagement-evaluation-team # To be used as a custom filter
   color: 008ab3 # Hash value to be applied to the top section
   social_media: # Links
@@ -13,8 +13,18 @@
 - title: mySociety # Organization
   image: mysociety-logo.png # Logo image
   image_white: mysociety-logo-white.png # Logo image (white version)
-  short_description: All Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque non dolor sapiente suscipit. Magni excepturi iusto, ducimus facere, iure ex quaerat id est corporis incidunt, doloribus odio voluptate totam pariatur.
-  long_description: All Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque non dolor sapiente suscipit. Magni excepturi iusto, ducimus facere, iure ex quaerat id est corporis incidunt, doloribus odio voluptate totam pariatur.
+  short_description: "<p>mySociety is a not-for-profit social enterprise, based in the UK and working internationally.</p>
+
+  <p>We build online technologies that give people the power to get things changed, and we share these technologies so that they can be used anywhere.</p>
+
+  <p>We believe that strong democratic accountability and a thriving civil society are vital to our common welfare, and that these only survive when people engage with government and communities.</p>
+
+  <p>We work with online technologies because the internet can lower the barriers to taking the first civic or democratic steps in a citizen’s life, and it can do so at scale.</p>
+
+  <p>We work with partner groups to help them build effective civic websites through the implementation of our tools and software.</p>
+
+  <p>We ensure our projects are having real impact through a rigorous programme of research that we also share with civic tech practitioners worldwide, providing global leadership and inspiration in our sector.</p>"
+  long_description: false
   custom_filter: false # To be used as a custom filter
   color: 333333 # Hash value to be applied to the top section
   social_media: # Links
@@ -25,8 +35,8 @@
 - title: The Govlab # Organization
   image: govlab-logo.png # Logo image
   image_white: govlab-logo-white.png # Logo image (white version)
-  short_description: All Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque non dolor sapiente suscipit. Magni excepturi iusto, ducimus facere, iure ex quaerat id est corporis incidunt, doloribus odio voluptate totam pariatur.
-  long_description: All Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque non dolor sapiente suscipit. Magni excepturi iusto, ducimus facere, iure ex quaerat id est corporis incidunt, doloribus odio voluptate totam pariatur.
+  short_description: The GovLab’s mission is to improve people’s lives by changing the way we govern. Our goal is to strengthen the ability of institutions – including but not limited to governments – and people to work more openly, collaboratively, effectively and legitimately to make better decisions and solve public problems. We believe that increased availability and use of data, new ways to leverage the capacity, intelligence, and expertise of people in the problem-solving process, combined with new advances in technology and science can transform governance. We approach each challenge and opportunity in an interdisciplinary, collaborative way, irrespective of the problem, sector, geography and level of government.
+  long_description: false
   custom_filter: false # To be used as a custom filter
   color: 523080 # Hash value to be applied to the top section
   social_media: # Links
