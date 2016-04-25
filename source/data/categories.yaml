@@ -1,6 +1,6 @@
 - title: All
   description: Across the world, science and technology are creating innovative ways for people to tackle society’s problems together.
-  custom_filter: All
+  custom_filter: false
   cover_image: false
 
 - title: Behavioral Research
