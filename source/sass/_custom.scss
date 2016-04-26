@@ -129,11 +129,31 @@ body {
   &.m-labs-and-experimentation {background-color: $labs-and-experimentation !important;}
 }
 
-//// footer
-.e-partner-logo{
-  width: 31%;
-  padding: 0 2%
+
+.b-footer {
+  h4 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .4px;
+  }
+
+  .e-sections {
+    a { display: block; }
+  }
+
+  p, a { 
+    font-size: .9rem; 
+    margin: 0;
+  }
+
+  .e-partner-logo {
+    width: 140px;
+    margin: 15px;
+
+    &.m-deet {
+      width: 180px;
+    }
+  }
 }
-.footer-text:hover{
-  color: $yellow;
-}
+
