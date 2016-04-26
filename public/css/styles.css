@@ -7657,3 +7657,9 @@ input[type=checkbox]:not(:disabled) ~ .lever:active:after {
 
 .footer-text:hover {
   color: #d9be5b; }
+
+#submit-research-button {
+  margin: 5% 0 0 0; }
+
+#submit-research-button:hover {
+  color: #d9be5b; }
