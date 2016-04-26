@@ -53,11 +53,11 @@
       {% for d in $global.papers %}
         {% if d.organization == title|slug %}
 
-          {{resultItem.createResult(d,$global.authors,$global.taxonomy_category, $global.taxonomy_methodology,$global.taxonomy_objective, $global.type,$global.region, $global.sector,$global.tools)}}
+          {{resultItem.createResult(d,$global.authors,$global.taxonomy_category, $global.taxonomy_methodology,$global.taxonomy_objective, $global.type,$global.region, $global.sector,$global.tools,$global.categories)}}
 
         {% elif custom_filter and d.organization == custom_filter %}
 
-          {{resultItem.createResult(d,$global.authors,$global.taxonomy_category, $global.taxonomy_methodology,$global.taxonomy_objective, $global.type,$global.region, $global.sector,$global.tools)}}
+          {{resultItem.createResult(d,$global.authors,$global.taxonomy_category, $global.taxonomy_methodology,$global.taxonomy_objective, $global.type,$global.region, $global.sector,$global.tools,$global.categories)}}
 
         {% endif %}
       {% endfor %}
