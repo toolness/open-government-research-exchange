@@ -6,7 +6,7 @@
   <div class="b-filter-ui-container">
     <div class="large-2 columns">
       <div class="e-select">
-        <select name="" id="" class="b-filter js-change" {% if results | length == 0 %}disabled{% endif %}>
+        <select name="" id="filter-{{field | slug}}" class="b-filter js-change" {% if results | length == 0 %}disabled{% endif %}>
           <option data-filter="{% for n in range(num) %}*{% endfor %}">{{field}}</option>
           {% for r in results -%}
             <option data-filter="f-{{r | slug}}">{{r}}</option>
