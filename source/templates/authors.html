@@ -17,7 +17,7 @@
       {% for a in  custom_authors %}
         <div class="column large-4 e-list-item">
           <div class="e-picture" style="background-image: url('./img/authors/{{ a.image }}');"></div>
-          <p class="e-name" href="{{a.id }}-{{a.title | slug }}.html">{{a.title}}</p>
+          <a href="{{a.id }}-{{a.title | slug }}.html"<p class="e-name">{{a.title}}</p></a>
           <p class="e-job">{{a.job}}</p>
         </div>
       {% endfor %}
@@ -33,12 +33,24 @@
 
   <div class="b-page-section b-all-categories-list">
     <div class="row expanded">
-      {% for a in  authors %}
-        {% if not a.value | titleExists(custom_authors) %}
-        <div class="column large-4 e-list-item">
-          <a href="{{a.id }}-{{a.title | slug }}.html">{{a.value}}</a>
-        </div>
-        {% endif %}
+      <div class="small-6 large-centered columns">
+      {% set 'alphabet' = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" | split("") %}
+      {% for a in alphabet %}
+        <span style="font-size: 40px;"><a href="#{{a}}">{{a}}</a></span>
+      {% endfor %}
+      </div>
+
+      {% set 'author_list' = authors | createPeopleObjects() %}
+
+    {% for letter in alphabet %}
+        <a name="{{letter}}"></a>
+          {% for a in author_list | sort(attribute="last_name") %}
+          {% if a.letter_idx == letter and not a.full_name | titleExists(custom_authors) %}
+          <div class="column large-4 e-list-item">
+            <a href="{{a.id }}-{{a.full_name | slug }}.html">{{a.full_name }}</a>
+          </div>
+          {% endif %}
+          {% endfor %}
       {% endfor %}
     </div>
   </div>
