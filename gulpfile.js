@@ -171,7 +171,28 @@ function returnID(value,source) {
   return result;
 }
 
+// make people object
+function Person(id,first,last) {
+  this.first_name = first,
+  this.last_name = last,
+  this.full_name = first + " " + last,
+  this.id = id,
+  this.letter_idx = last[0];
+}
 
+// make people objects from data
+function createPeopleObjects(obj) {
+  var people = [];
+  obj.forEach(function(val) {
+    if (val){
+    var nameArr = val.value.split(" ");
+    var lastName = nameArr[nameArr.length-1];
+    var firstName = nameArr.slice(0,nameArr.indexOf(lastName)).join(" ");
+    people.push(new Person(val.id, firstName, lastName));
+    }
+  });
+  return people;
+}
 
 // return a matched set of objects containing property (prop) with value (value)
 // if prop is an array, treat it as dot syntax
@@ -291,6 +312,7 @@ function nunjucksEnv(env) {
   env.addFilter('pushallnew', pushAllValuesInCategory);
   env.addFilter('returnID', returnID);
   env.addFilter('titleExists', titleExists);
+  env.addFilter('createPeopleObjects', createPeopleObjects)
 }
 
 // a subroutine to simplify processJson
