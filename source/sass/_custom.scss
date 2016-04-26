@@ -119,7 +119,7 @@ body {
 
 // PLACEHOLDER COLOR CODES FOR LIST ITEM
 .e-list-item {
-  &.m-all {background-color: $all;} 
+  &.m-all {background-color: $all;}
   &.m-behavioral-research {background-color: $behavioral-research !important;}
   &.m-citizen-engagement {background-color: $citizen-engagement;}
   &.m-civic-technology {background-color: $civic-technology !important;}
@@ -130,4 +130,30 @@ body {
 }
 
 
+.b-footer {
+  h4 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .4px;
+  }
+
+  .e-sections {
+    a { display: block; }
+  }
+
+  p, a { 
+    font-size: .9rem; 
+    margin: 0;
+  }
+
+  .e-partner-logo {
+    width: 140px;
+    margin: 15px;
+
+    &.m-deet {
+      width: 180px;
+    }
+  }
+}
 
