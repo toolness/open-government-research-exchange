@@ -213,16 +213,16 @@ $(function() {
             $snippet.find('.m-closed-access').remove();
 
             if (mapping[m].access.toLowerCase() === 'closed') {
-               $snippet.find('.e-result-extras').append('<i class="material-icons m-closed-access" title="Closed Access">lock_outline</i>')
-           }
+             $snippet.find('.e-result-extras').append('<i class="material-icons m-closed-access" title="Closed Access">lock_outline</i>')
+         }
 
-           resultsHTML += $snippet.prop('outerHTML');
-       }
+         resultsHTML += $snippet.prop('outerHTML');
+     }
 
-       $( '.b-lunr-results' ).html(resultsHTML);
-   };
+     $( '.b-lunr-results' ).html(resultsHTML);
+ };
 
-   var filter = function (e) {
+ var filter = function (e) {
         // $( '.b-lunr-results' ).text( JSON.stringify(index.search($('#lunr-search').val())) );
 
         var results,
@@ -260,5 +260,14 @@ $(function() {
     $('#lunr-search').keyup(debouncedSearch);
     $('#lunr-search').on('search:execute', debouncedSearch);
     $('#lunr-filter').keyup(debouncedFilter);
+
+    // prevent enter key from submitting form
+    $('.lunr-form').on('keyup keypress', function(e) {
+        var keyCode = e.keyCode || e.which;
+        if (keyCode === 13) {
+            e.preventDefault();
+            return false;
+        }
+    });
 
 });
