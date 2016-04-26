@@ -338,12 +338,31 @@ $(function() {
         setSearch(searchKey, filterString);
     });
 
+    $( document ).on( "filter:clear", {
+        foo: "bar"
+    }, function( e ) {
+        setSearch(searchKey, '');
+    });
+
     $( document ).on( "filter:update", {
         foo: "bar"
     }, function( e ) {
         filter(getSearch(searchKey));
     });
 
+    $( document ).on( "filter:bind", {
+        foo: "bar"
+    }, function( e ) {
+        urlFilter();
+    });
+
+    $( document ).on( "filter:clearRebind", {
+        foo: "bar"
+    }, function( e ) {
+        setSearch(searchKey, '');
+        filter('');
+        selectFilterUI('');
+    });
 
     // initialize isotope
     $grid.isotope(isotopeDefaults);
