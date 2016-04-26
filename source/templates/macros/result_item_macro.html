@@ -1,4 +1,4 @@
-{% macro createResult(paper,authors,taxonomy_category,taxonomy_methodology, taxonomy_objective, type, region, sector,tools) %}
+{% macro createResult(paper,authors,taxonomy_category,taxonomy_methodology, taxonomy_objective, type, region, sector,tools,main_categories) %}
 
 
 <div class="b-result-item m-access-{{paper.access | slug}} f-{{paper.organization | slug}} {% for obj in paper.taxonomy.objective %} {%if obj%} f-{{obj | slug}} {% endif %} {% endfor %}f-{{paper.access | slug}}  {% for methodology in paper.taxonomy.methodology %} {% if methodology %} f-{{methodology | slug}} {% endif %} {% endfor %} {% for s in paper.sector %} {% if s %} f-{{ s | slug}} {% endif %} {% endfor %} {% for r in paper.region %} {% if r %} f-{{ r | slug}} {% endif %} {% endfor %} f-{{paper.type | slug}} f-search-{{paper.id}}{% for c in paper.taxonomy.category %} m-{{ c | slug}}{% endfor %} ">
@@ -23,12 +23,18 @@
       {% if paper.taxonomy.category %}
       <div class="e-result-taxonomy m-category">
         <p>Category</p>
-        {% for cat in paper.taxonomy.category %} 
-          <a href="{{ cat | returnID(taxonomy_category) }}-{{ cat | slug }}.html" class="e-tag m-{{cat}}">{{cat}}</a>
+        {%- for cat in paper.taxonomy.category -%} 
+            {%- for main_cat in main_categories -%}
+              {%- if cat == main_cat.custom_filter -%}
+                <a href="{{main_cat.id }}-{{main_cat.title | slug }}.html" class="e-tag m-{{cat}}">
+              {%- elif not cat == main_cat.custom_filter -%}
+                <a href="{{ cat | returnID(taxonomy_category) }}-{{ cat | slug }}.html" class="e-tag m-{{cat}}">
+              {%- endif -%}
+            {%- endfor -%}
+              {{cat}}</a>
         {% endfor %}
       </div>
       {% endif %}
-
       {% if paper.taxonomy.methodology %}
       <div class="e-result-taxonomy m-methodology">
         <p>Methodology</p>
