@@ -1,0 +1,55 @@
+{% extends '_base.html' %}
+
+{% block main %}
+
+<div class-"b-all-categories-page">
+
+  <div class="b-top-section">
+    <h1>Organizations</h1>
+  </div>
+
+{# List of Organizations - Founding Organizations #}
+  <div class="b-divider">
+    <h1>Founding Partners</h1>
+  </div>
+
+  <div class="b-page-section b-organizations b-founding-partners">
+    <div class="row expanded">
+
+      {% for organization in organizations %}
+        <div class="column large-4">
+          <div class="e-organization-logo m-{{ organization.title | slug }}">
+            <a href="{{ organization.id }}-{{ organization.title | slug }}.html"><img src="./img/organizations/{{ organization.image }}" alt="{{ organization.title }}"></a>
+          </div>
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+
+
+{# List of Organizations - All Organizations #}
+  <div class="b-divider">
+    <h1>Partners</h1>
+  </div>
+
+  <div class="b-page-section b-all-categories-list">
+    <div class="row expanded">
+      {% for org in  organization %}
+        {% if not org.value | titleExists(organizations) %}
+        <div class="column large-4 e-list-item">
+        {# Add links and images later #}
+          {# <a href="{{org.id }}-{{org.title | slug }}.html">{{org.value}} #}
+          {# </a> #}
+          <p>{{org.value}}</p>
+
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+
+</div>
+
+{% endblock %}
