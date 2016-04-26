@@ -639,6 +639,12 @@ gulp.task('lunr', ['json'], function() {
       boost: 10
     });
     this.field('abstract');
+    this.field('authors');
+    this.field('taxonomy');
+    this.field('organization');
+    this.field('sector');
+    this.field('region');
+    this.field('tags');
   });
 
   var papers = generatedData.papers;
@@ -675,6 +681,12 @@ gulp.task('lunr', ['json'], function() {
             boost: 10
           });
           this.field('abstract');
+          this.field('authors');
+          this.field('taxonomy');
+          this.field('organization');
+          this.field('sector');
+          this.field('region');
+          this.field('tags');
         });
         _data.forEach(function(p) {
           _idx.add(p);
