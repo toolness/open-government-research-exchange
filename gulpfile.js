@@ -768,5 +768,4 @@ gulp.task('default', ['bs', 'build'], function (){
   gulp.watch('source/js/**/*', ['js']);
 });
 
-// TODO: Add prerequisite tasks (e.g. buildTasks).
-gulp.task('s3', [], deployToS3);
+gulp.task('s3', buildTasks, deployToS3);
