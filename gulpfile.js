@@ -22,7 +22,8 @@ es              = require('event-stream'),
 fs              = require('fs'),
 md5             = require('md5'),
 lunr            = require('lunr'),
-packagejson     = require('./package.json')
+packagejson     = require('./package.json'),
+deployToS3      = require('./gulp/s3-deploy')
 ;
 
 // define options & configuration ///////////////////////////////////
@@ -766,3 +767,5 @@ gulp.task('default', ['bs', 'build'], function (){
   gulp.watch('source/img/**/*', ['img']);
   gulp.watch('source/js/**/*', ['js']);
 });
+
+gulp.task('s3', [], deployToS3);
